@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Style</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="SageoUI.woff2" as="font" type="font/woff2" crossorigin />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>ALEX STYLE</h1>
+      <nav>
+        <a href="#about" data-tooltip="Learn about me">About</a>
+        <a href="#projects" data-tooltip="See my work">Projects</a>
+        <a href="#contact" data-tooltip="Get in touch">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m a passionate designer and developer building clean, responsive, and user-friendly interfaces.</p>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="grid">
+        <div class="project" onclick="openModal('modal1')">
+          <img src="https://t3.ftcdn.net/jpg/15/15/42/22/240_F_1515422270_4b1p6fc8NzJI9mYGNJvbSHMRsqoc1R4P.jpg" alt="Project 1">
+          <span>Project One</span>
+        </div>
+        <div class="project" onclick="openModal('modal2')">
+          <img src="https://t4.ftcdn.net/jpg/11/90/56/83/240_F_1190568360_Pg2ujPK8veDHO1saAjQSXWQgD4Po3ksL.jpg" alt="Project 2">
+          <span>Project Two</span>
+        </div>
+        <div class="project" onclick="openModal('modal3')">
+          <img src="https://t4.ftcdn.net/jpg/15/15/42/19/240_F_1515421933_w6Kd1W4bYifXJZtN89Nfoc9URDqdXLNz.jpg" alt="Project 3">
+          <span>Project Three</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- === Modals === -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h3>Project One</h3>
+      <p>Detailed description of Project One with goals, tools used, and outcomes.</p>
+    </div>
+  </div>
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h3>Project Two</h3>
+      <p>Detailed description of Project Two with process insights and results.</p>
+    </div>
+  </div>
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h3>Project Three</h3>
+      <p>Project Three overview, challenges faced, and lessons learned.</p>
+    </div>
+  </div>
+
+  <!-- === Modal JS (Non-intrusive minimal inline JS) === -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    window.onclick = function(e) {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (e.target === modal) modal.style.display = "none";
+      });
+    };
+  </script>
+</body>
+</html>
